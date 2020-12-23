@@ -23,7 +23,7 @@ public class CheckerForm extends JFrame {
                 // ([+]?[78]\([\d]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2})
                 // \d{1,2}[:-]\d{1,2}[:-]\d{1,2}
                 // (\w+)@\w+\.(ru|com|net|ua|org)
-                Pattern emailPattern = Pattern.compile("\\w+@\\w+\\.(ru|com|net|ua|org)");
+                Pattern emailPattern = Pattern.compile("(\\w+)@\\w+\\.(ru|com|net|ua|org)");
                 Matcher emailPatternMatcher = emailPattern.matcher(textField1.getText());
                 if (emailPatternMatcher.find()) {
 
@@ -33,6 +33,8 @@ public class CheckerForm extends JFrame {
                                 .getScaledInstance(16, 16, Image.SCALE_DEFAULT)
                     );*/
                     responseLabel.setIcon(new ImageIcon("src/origUnresized.png"));
+                    System.out.println("account name: " + emailPatternMatcher.group(1));
+                    System.out.println("domain name: " + emailPatternMatcher.group(2));
                     System.out.println("good");
                 } else {
                     responseLabel.setIcon(new ImageIcon("src/origUnresized.png"));
