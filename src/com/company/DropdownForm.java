@@ -13,31 +13,27 @@ public class DropdownForm extends JFrame {
         setSize(600, 200);
         setContentPane(mainPanel);
 
+        String[] catNames = new String[]{
+                "Аманта",
+                "Арабелла",
+                "Ахия"
+        };
 
-        for (PaymentType type : PaymentType.values()) {
-            comboBox1.addItem(type.toString());
+        Cat[] cats = new Cat[]{
+                new Cat("Аманта"),
+                new Cat("Арабелла"),
+                new Cat("Ахия")
+        };
+
+        for (String cat : catNames) {
+            comboBox1.addItem(cat);
         }
 
         comboBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int selectedIndex = comboBox1.getSelectedIndex();
-                if (selectedIndex == 0) {
-                    pay(PaymentType.CARD);
-                } else if (selectedIndex == 0) {
-                    pay(PaymentType.CARD);
-                }
-                //System.out.println(elementsToChoose[selectedIndex]);
+                visualizationLabel.setText(cats[comboBox1.getSelectedIndex()].toString());
             }
         });
-    }
-
-    enum PaymentType {
-        CASH,
-        CARD
-    }
-
-    public void pay(PaymentType selectedPaymentType) {
-
     }
 }
