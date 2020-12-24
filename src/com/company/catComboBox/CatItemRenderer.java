@@ -19,7 +19,6 @@ public class CatItemRenderer extends JPanel implements ListCellRenderer<Cat> {
         labelItem.setHorizontalAlignment(JLabel.LEFT);
 
         add(labelItem, constraints);
-        setBackground(Color.WHITE);
     }
 
 
