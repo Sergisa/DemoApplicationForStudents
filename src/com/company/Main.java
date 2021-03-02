@@ -9,16 +9,16 @@ public class Main {
     static BufferedReader bufferedReader;
     public static void main(String[] args) {
         String line;
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuffer stringBuffer = new StringBuffer();
         File file = new File("src/com/company/data.txt");
         try {
             bufferedReader = new BufferedReader(new FileReader(file));
             while((line = bufferedReader.readLine()) != null){
-                stringBuilder.append(line).append('\n');
+                stringBuffer.append(line).append('\n');
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(stringBuilder.toString());
+        System.out.println(stringBuffer.toString());
     }
 }
