@@ -6,5 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         Console.writeLine("Hello world", ConsoleColor.RED_BOLD);
+        Console.writeLine("Hello world", ConsoleColor.CYAN);
     }
 }

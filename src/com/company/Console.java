@@ -6,20 +6,20 @@ public class Console {
         System.out.println(string);
     }
 
-    static void writeLine(Object string, String color) {
+    static void writeLine(Object string, ConsoleColor color) {
         System.out.print(color);
         writeLine(string);
-        System.out.print(ConsoleColor.RESET);
+        System.out.print(color);
     }
 
     static void writeLine() {
         System.out.println();
     }
 
-    static void write(Object string, String color) {
+    static void write(Object string, ConsoleColor color) {
         write(color);
         write(string);
-        write(ConsoleColor.RESET);
+        write(color);
     }
 
     static void write(Object string) {
